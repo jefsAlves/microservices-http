@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import com.alvesjefs.hr_payroll.domain.Workers;
 
 @Component
-@FeignClient(value = "hr-workers", url = "localhost:8001", path = "/api/workers")
+@FeignClient(value = "hr-workers", path = "/api/workers")
 public interface WorkersFeignClient {
 
 	@GetMapping(value = "/{id}")
