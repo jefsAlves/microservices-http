@@ -1,5 +1,7 @@
 package com.alvesjefs.hr_workers.resources;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,5 +23,11 @@ public class WorkersResources {
 	public ResponseEntity<Workers> finById(@PathVariable Long id) {
 		Workers workers = workersService.findById(id);
 		return ResponseEntity.ok().body(workers);
+	}
+
+	@GetMapping
+	public ResponseEntity<List<Workers>> findAll(Workers workers) {
+		List<Workers> wor = workersService.findAll(workers);
+		return ResponseEntity.ok().body(wor);
 	}
 }
